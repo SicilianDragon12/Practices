@@ -1,0 +1,31 @@
+#Import random to use random.choices syntax
+import random
+
+#Use while loop for continued play
+while True:
+    my_move = input ("Please enter your move: scissors, paper or stone!: ")
+    comp_response = ["scissors","paper","stone"]
+    comp_move = random.choice(comp_response)
+    print (f"\nYou chose {my_move}, computer chose {comp_move}.\n")
+
+#Config
+    if my_move.casefold() == comp_move:
+        print ("It's a tie!")
+    elif my_move.casefold() == "stone" and comp_move == "paper":
+        print ("Paper covers stone! You lost!")
+    elif my_move.casefold() == "stone" and comp_move == "scissors":
+        print ("stone smashes scissors! You won!")
+    elif my_move.casefold() == "paper" and comp_move == "stone":
+        print ("Paper covers stone! You won!")
+    elif my_move.casefold() == "paper" and comp_move == "scissors":
+        print ("Scissors cut paper! You lost!")
+    elif my_move.casefold() == "scissors" and comp_move == "paper":
+        print ("Scissors cut paper! You won!")
+    elif my_move.casefold() == "scissors" and comp_move == "stone":
+        print ("Stone smashes scissors! You lost!")
+
+#Offering a replay option
+    replay = input ("Replay? y or n: ")
+    print("*" * 40)
+    if replay.lower() != "y":
+        break
